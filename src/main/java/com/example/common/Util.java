@@ -27,6 +27,14 @@ public class Util {
         return faker;
     }
 
+    public static void sleepSeconds(int seconds){
+        try {
+            Thread.sleep(Duration.ofSeconds(seconds));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void main(String[] args) {
 
         Mono<Integer> mono = Mono.just(1);

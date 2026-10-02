@@ -13,6 +13,7 @@ import java.util.function.UnaryOperator;
 public class Util {
 
     private static final Logger log = LoggerFactory.getLogger(Util.class);
+    private static final Faker faker = Faker.instance();
 
     public static <T> Subscriber<T> subscriber() {
         return new DefaultSubscriber<>("");
@@ -20,6 +21,10 @@ public class Util {
 
     public static <T> Subscriber<T> subscriber(String name) {
         return new DefaultSubscriber<>(name);
+    }
+
+    public static Faker faker(){
+        return faker;
     }
 
     public static void main(String[] args) {
